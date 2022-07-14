@@ -1,0 +1,42 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "npm run clean && parcel src/index.html -p 3000 --open",
+    "build": "rimraf ./dist && parcel build --no-optimize src/*.html --public-url ./",
+    "clean": "rimraf ./dist && rimraf ./.parcel-cache",
+    "watch:sass": "sass src/sass/main.scss src/css/style.css -w",
+    "devserver": "live-server",
+    "start:sass": "npm-run-all --parallel devserver watch:sass",
+    "compile:sass": "sass src/sass/main.scss src/css/style.comp.css",
+    "concat:css": "concat -o src/css/style.concat.css src/css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' src/css/style.concat.css -o src/css/style.prefix.css",
+    "compress:css": "sass src/css/style.prefix.css src/css/style.min.css --style compressed",
+    "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "author": "Mikel",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.2",
+    "autoprefixer": "^10.4.2",
+    "babel-cli": "^6.26.0",
+    "concat": "^1.0.3",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.6.2",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^9.1.0",
+    "process": "^0.11.10",
+    "sass": "^1.43.2",
+    "tailwindcss": "^3.1.6"
+  },
+  "dependencies": {
+    "babel-preset-react-app": "^3.1.2",
+    "normalize.css": "^8.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rimraf": "^3.0.2",
+    "styled-components": "^5.3.5"
+  }
+}

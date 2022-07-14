@@ -1,0 +1,23 @@
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
+
+@import 'npm:normalize.css';
+
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/btn";
+
+
+@import "layout/header";
+@import "layout/nav";
+@import "layout/footer";
+
+@import "pages/index";
