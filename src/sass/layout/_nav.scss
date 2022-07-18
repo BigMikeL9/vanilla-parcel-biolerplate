@@ -1,115 +1,92 @@
 .nav {
-  font-size: 1.2rem;
-  border-bottom: 10px solid var(--color-purple-light);
   position: relative;
+  font-size: 1.2rem;
   z-index: 999;
-  background-color: #fff;
+  background-color: black;
 
-  @media (max-width: 75em) {
-    display: none;
+  @include responsive(mobile) {
+    min-height: var(--nav-height-600);
   }
 
   &__list {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 0 1rem;
-    max-width: var(--content-max-width-1200);
-    height: var(--responsive-nav-height);
-    max-height: var(--responsive-nav-height);
+    gap: 1rem;
     margin: auto;
+    max-width: 1200px;
+    padding: 0 2.5rem;
 
-    font-family: "brandon-grotesque", sans-serif;
+    font-family: var(--font-primary);
+    font-size: 1.6rem;
     color: var(--color-purple);
     font-weight: 400;
 
-    @include responsive(tab-port) {
-    }
-
     @include responsive(mobile) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      position: absolute;
+      top: var(--nav-height-600);
+      left: 0;
+      background-color: aqua;
+      padding: 2rem 4rem;
+      z-index: 40;
+      box-shadow: 0 2rem 2rem rgb(0 0 0 / 20%);
+
+      // height: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.5s ease;
+
+      &.active {
+        // height: fit-content;
+        opacity: 1;
+        visibility: visible;
+      }
     }
   }
 
   &__item {
-    text-align: center;
-    margin-right: 2rem;
-    height: 100%;
+    color: #fff;
+    padding: 2rem 0;
 
-    &:nth-last-child(2) {
-      position: relative;
-      padding-left: 3rem;
-
-      &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        height: 50%;
-        width: 2px;
-        background-color: var(--color-pink);
-      }
+    @include responsive(mobile) {
+      padding: unset;
     }
   }
 
   &__link {
     display: inline-block;
     text-transform: uppercase;
-    position: relative;
-    top: 50%;
     font-weight: 600;
-    transform: translateY(-50%);
-
     transition: all 0.3s ease;
 
-    @media only screen and (max-width: 87.5em) {
-      top: 30%;
-      transform: translateY(0);
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: -3.4rem;
-      left: 0;
-      width: 0;
-      height: 100%;
-      border-radius: 0.2rem;
-      border-top: 1.6rem solid transparent;
-
-      transition: all 0.3s;
-    }
-
-    &:hover::before,
-    &:focus::before,
-    &.active::before {
-      border-top: 1.6rem solid #f67d0f;
-      width: 100%;
-    }
-
-    &:active {
-      background-color: none;
-    }
-
-    &:hover {
-      color: var(--color-black);
+    &:hover,
+    &:focus,
+    &.active {
+      color: red;
     }
   }
 
+  // ----- MOBILE ICON -----
   &__mobile-icon {
-    display: flex;
-    align-items: center;
+    display: none;
+    margin-left: auto;
     cursor: pointer;
 
-    height: var(--responsive-nav-height);
-    color: var(--color-pink);
+    color: #fff;
 
-    // Whenever we're using a device that can hover. Desktop/laptop
-    @media only screen and (hover: hover) {
-      &:hover,
-      &.active {
-        color: var(--color-pink-light);
-      }
+    @include responsive(mobile) {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--color-primary);
     }
 
     &--text {
@@ -149,7 +126,7 @@
     }
 
     &.active {
-      color: var(--color-pink-light);
+      color: #fff;
 
       &--text {
       }

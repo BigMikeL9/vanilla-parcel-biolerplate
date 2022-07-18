@@ -50,14 +50,19 @@ html {
 }
 
 body {
-  font-family: "Raleway", sans-serif;
-  font-size: clamp(12px, 3.5vw, 1.6rem);
+  font-family: var(--font-primary);
+  font-size: max(12px, 1.6rem);
   overflow-x: hidden;
   font-weight: 400;
   line-height: 1.5;
   color: var(--color-black);
 
   min-height: 100vh;
+}
+
+::selection {
+  background-color: #a73f90;
+  color: #fff;
 }
 
 article,
@@ -117,7 +122,4 @@ table {
   border-spacing: 0;
 }
 
-::selection {
-  background-color: #a73f90;
-  color: #fff;
-}
+
