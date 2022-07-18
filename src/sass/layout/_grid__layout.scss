@@ -1,0 +1,32 @@
+.grid__container {
+  display: grid;
+
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+
+  grid-template-columns:
+    [sidebar-start] 8rem [sidebar-end full-content-start]
+    minmax(6rem, 1fr)
+    [centered-content-start] repeat(
+      8,
+      [column-start] minmax(min-content, 14rem) [column-end]
+    )
+    [centered-content-end]
+    minmax(6rem, 1fr)
+    [full-content-end];
+
+  // ---- 900px
+  @include responsive(tab-port) {
+    grid-template-rows: 6rem calc(100vh - 6rem);
+
+    grid-template-columns:
+      [full-content-start]
+      minmax(6rem, 1fr)
+      [centered-content-start] repeat(
+        8,
+        [column-start] minmax(min-content, 14rem) [column-end]
+      )
+      [centered-content-end]
+      minmax(6rem, 1fr)
+      [full-content-end];
+  }
+}
