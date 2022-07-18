@@ -1,8 +1,8 @@
 .nav {
   position: relative;
-  font-size: 1.2rem;
+  font-size: max(12px, 1.4rem);
   z-index: 999;
-  background-color: black;
+  background-color: var(--color-primary);
 
   @include responsive(mobile) {
     min-height: var(--nav-height-600);
@@ -19,7 +19,7 @@
 
     font-family: var(--font-primary);
     font-size: 1.6rem;
-    color: var(--color-purple);
+    color: var(--color-secondary);
     font-weight: 400;
 
     @include responsive(mobile) {
@@ -30,7 +30,7 @@
       position: absolute;
       top: var(--nav-height-600);
       left: 0;
-      background-color: aqua;
+      background-color: var(--color-primary);
       padding: 2rem 4rem;
       z-index: 40;
       box-shadow: 0 2rem 2rem rgb(0 0 0 / 20%);
@@ -66,7 +66,7 @@
     &:hover,
     &:focus,
     &.active {
-      color: red;
+      color: greenyellow;
     }
   }
 
@@ -76,7 +76,7 @@
     margin-left: auto;
     cursor: pointer;
 
-    color: #fff;
+    color: var(--color-primary);
 
     @include responsive(mobile) {
       display: flex;
@@ -86,7 +86,7 @@
 
     &:hover,
     &:focus {
-      color: var(--color-primary);
+      color: var(--color-secondary);
     }
 
     &--text {

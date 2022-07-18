@@ -14,7 +14,7 @@
     "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' src/css/style.concat.css -o src/css/style.prefix.css",
     "compress:css": "sass src/css/style.prefix.css src/css/style.min.css --style compressed",
     "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css",
-    "new:git": "npm run all --parallel rm -fr .git git status"
+    "new:git": "npm-run-all --parallel rm -fr .git git status"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "author": "Mikel",

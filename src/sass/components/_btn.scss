@@ -2,8 +2,8 @@
   &,
   &:link,
   &:visited {
-    font-family: "Brandon Grotesque", serif;
-    font-size: 1.4rem;
+    font-family: var(--font-secondary);
+    font-size: max(12px, 1.4rem);
     font-weight: 600;
 
     display: inline-block;

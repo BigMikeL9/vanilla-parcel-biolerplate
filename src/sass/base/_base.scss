@@ -92,6 +92,21 @@ a {
   }
 }
 
+// all anchor tags except navlinks
+a:not([class~="nav__link"]) {
+  &:link,
+  &:visited {
+    color: var(--color-secondary);
+    text-decoration: underline;
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--color-secondary_Hover);
+    outline: none;
+  }
+}
+
 ul,
 ol {
   list-style: none;
@@ -121,5 +136,3 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
-
