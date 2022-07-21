@@ -28,21 +28,20 @@
       align-items: center;
       width: 100%;
       position: absolute;
-      top: var(--nav-height-600);
+      top: 100%;
       left: 0;
       background-color: var(--color-primary);
       padding: 2rem 4rem;
       z-index: 40;
       box-shadow: 0 2rem 2rem rgb(0 0 0 / 20%);
 
-      // height: 0;
-      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
       visibility: hidden;
-      transition: all 0.5s ease;
+      transition: all 0.5s;
 
       &.active {
-        // height: fit-content;
-        opacity: 1;
+        max-height: 50vh;
         visibility: visible;
       }
     }
@@ -61,12 +60,11 @@
     display: inline-block;
     text-transform: uppercase;
     font-weight: 600;
-    transition: all 0.3s ease;
 
     &:hover,
     &:focus,
     &.active {
-      color: greenyellow;
+      color: var(--color-secondary);
     }
   }
 
@@ -76,7 +74,7 @@
     margin-left: auto;
     cursor: pointer;
 
-    color: var(--color-primary);
+    color: var(--color-secondary);
 
     @include responsive(mobile) {
       display: flex;
@@ -86,7 +84,7 @@
 
     &:hover,
     &:focus {
-      color: var(--color-secondary);
+      color: var(--color-tertiary);
     }
 
     &--text {

@@ -20,8 +20,6 @@ const ButtonS = styled.button`
   }
 `;
 
-
-
 const Button = (props) => {
   console.log(props);
 
@@ -46,6 +44,7 @@ const h1 = document.querySelector("h1")?.innerHTML;
 // --------
 // -- When we have just ONE of the same element in HTML
 // const container = document.getElementById("button");
+// if (!container) return;
 // const root = ReactDOM.createRoot(container);
 // root.render(<Button {...container.dataset} />);
 // ----------------------------------
@@ -54,7 +53,8 @@ const h1 = document.querySelector("h1")?.innerHTML;
 // -- When we have MORE than one of the same element in HTML
 const containers = document.querySelectorAll("#react__button");
 
-const roots = [...containers]?.map((container) =>
+if (!containers) return;
+const roots = [...containers].map((container) =>
   ReactDOM.createRoot(container)
 );
 
@@ -65,10 +65,11 @@ roots.forEach((root, index) =>
 console.log(roots);
 // ----------------------------------
 
-
-{/* <div
+{
+  /* <div
       id="react__button"
       data-feed="custom_feed.json"
       data-children="This is a React component"
       class="text-3xl font-bold underline mb-4"
-    ></div> */}
+    ></div> */
+}

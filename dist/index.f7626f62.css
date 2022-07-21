@@ -378,9 +378,17 @@ img, video {
   width: 100%;
 }
 
+.\!container {
+  width: 100% !important;
+}
+
 @media (min-width: 640px) {
   .container {
     max-width: 640px;
+  }
+
+  .\!container {
+    max-width: 640px !important;
   }
 }
 
@@ -388,11 +396,19 @@ img, video {
   .container {
     max-width: 768px;
   }
+
+  .\!container {
+    max-width: 768px !important;
+  }
 }
 
 @media (min-width: 1024px) {
   .container {
     max-width: 1024px;
+  }
+
+  .\!container {
+    max-width: 1024px !important;
   }
 }
 
@@ -400,11 +416,19 @@ img, video {
   .container {
     max-width: 1280px;
   }
+
+  .\!container {
+    max-width: 1280px !important;
+  }
 }
 
 @media (min-width: 1536px) {
   .container {
     max-width: 1536px;
+  }
+
+  .\!container {
+    max-width: 1536px !important;
   }
 }
 
@@ -440,8 +464,7 @@ img, video {
   --color-white: #fff;
   --color-black: #000;
   --font-primary: "Raleway", sans-serif;
-  --font-display: "Belgrano", sans-serif;
-  --nav-height-600: 40px;
+  --font-secondary: "Belgrano", sans-serif;
 }
 
 @keyframes nav__item-animation {
@@ -585,6 +608,16 @@ a:hover, a:focus {
   outline: none;
 }
 
+a:not([class~="nav__link"]):link, a:not([class~="nav__link"]):visited {
+  color: var(--color-secondary);
+  text-decoration: underline;
+}
+
+a:not([class~="nav__link"]):hover, a:not([class~="nav__link"]):focus {
+  color: var(--color-secondary_Hover);
+  outline: none;
+}
+
 ul, ol {
   list-style: none;
 }
@@ -610,10 +643,10 @@ table {
 }
 
 .heading-primary {
+  font-family: var(--font-secondary);
   color: var(--color-white);
   text-transform: uppercase;
-  font-family: Brandon Grotesque, serif;
-  font-size: 2.8rem;
+  font-size: max(18px, 2.8rem);
   font-weight: 400;
   line-height: 1.6;
   animation: moveInLeft 1.5s ease-in-out;
@@ -635,6 +668,7 @@ table {
 }
 
 .btn, .btn:link, .btn:visited {
+  font-family: var(--font-secondary);
   text-transform: uppercase;
   letter-spacing: .1px;
   color: var(--color-white);
@@ -642,8 +676,7 @@ table {
   background-color: var(--color-pink);
   z-index: 20;
   cursor: pointer;
-  font-family: Brandon Grotesque, serif;
-  font-size: 1.4rem;
+  font-size: max(12px, 1.4rem);
   font-weight: 600;
   text-decoration: none;
   transition: all .2s;
@@ -681,8 +714,8 @@ table {
 
 .nav {
   z-index: 999;
-  background-color: #000;
-  font-size: 1.2rem;
+  background-color: var(--color-primary);
+  font-size: max(12px, 1.4rem);
   position: relative;
 }
 
@@ -695,7 +728,7 @@ table {
 .nav__list {
   max-width: 1200px;
   font-family: var(--font-primary);
-  color: var(--color-purple);
+  color: var(--color-secondary);
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
@@ -709,23 +742,24 @@ table {
 @media only screen and (max-width: 37.5em) {
   .nav__list {
     width: 100%;
-    top: var(--nav-height-600);
+    background-color: var(--color-primary);
     z-index: 40;
-    opacity: 0;
+    max-height: 0;
     visibility: hidden;
-    background-color: #0ff;
     flex-direction: column;
     align-items: center;
     padding: 2rem 4rem;
     transition: all .5s;
     display: flex;
     position: absolute;
+    top: 100%;
     left: 0;
+    overflow: hidden;
     box-shadow: 0 2rem 2rem #0003;
   }
 
   .nav__list.active {
-    opacity: 1;
+    max-height: 50vh;
     visibility: visible;
   }
 }
@@ -744,17 +778,16 @@ table {
 .nav__link {
   text-transform: uppercase;
   font-weight: 600;
-  transition: all .3s;
   display: inline-block;
 }
 
 .nav__link:hover, .nav__link:focus, .nav__link.active {
-  color: red;
+  color: var(--color-secondary);
 }
 
 .nav__mobile-icon {
   cursor: pointer;
-  color: #fff;
+  color: var(--color-secondary);
   margin-left: auto;
   display: none;
 }
@@ -768,7 +801,7 @@ table {
 }
 
 .nav__mobile-icon:hover, .nav__mobile-icon:focus {
-  color: var(--color-primary);
+  color: var(--color-tertiary);
 }
 
 .nav__mobile-icon--text {
@@ -829,7 +862,7 @@ table {
   justify-content: center;
   align-items: center;
   padding: 4rem 15rem;
-  font-size: 1.3rem;
+  font-size: max(12px, 1.4rem);
   font-weight: 500;
   display: flex;
   position: relative;

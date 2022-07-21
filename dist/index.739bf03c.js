@@ -2896,8 +2896,10 @@ function hmrAcceptRun(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _navBar = require("./Components/navBar");
 var _navBarDefault = parcelHelpers.interopDefault(_navBar);
+var _dropdownsToggle = require("./components/dropdownsToggle");
+var _dropdownsToggleDefault = parcelHelpers.interopDefault(_dropdownsToggle);
 
-},{"./Components/navBar":"2VVEh","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2VVEh":[function(require,module,exports) {
+},{"./Components/navBar":"2VVEh","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./components/dropdownsToggle":"4mbf4"}],"2VVEh":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 "use strict";
@@ -2956,6 +2958,31 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["1xC6H","cVgJb","ebWYT"], "ebWYT", "parcelRequire4c92")
+},{}],"4mbf4":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+const dropdowns_Toggle = ()=>{
+    const dropdownContainers = document.querySelectorAll(".portraits__list-sort .dropdown");
+    // -- guard clause
+    if (!dropdownContainers[0]) return;
+    dropdownContainers.forEach((cont, index, arr)=>{
+        cont.addEventListener("click", function(event) {
+            // -- remove 'active' class from items that are not clicked
+            arr.forEach((item)=>{
+                if (item !== event.target) item.classList.remove("active");
+            });
+            // -- add 'active' class to clicked dropdown
+            event.target.classList.toggle("active");
+        });
+        // -- close dropdown when clicked outside
+        document.addEventListener("click", function(event) {
+            if (event.target !== cont) cont.classList.remove("active");
+        });
+    });
+};
+dropdowns_Toggle();
+exports.default = dropdowns_Toggle;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["1xC6H","cVgJb","ebWYT"], "ebWYT", "parcelRequire4c92")
 
 //# sourceMappingURL=index.739bf03c.js.map

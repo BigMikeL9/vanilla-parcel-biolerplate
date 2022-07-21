@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "npm run clean && parcel src/index.html -p 3000 --open",
+    "start": "npm run clean && parcel src/index.html -p 1234 --open",
     "build": "rimraf ./dist && parcel build --no-optimize src/*.html --public-url ./",
     "clean": "rimraf ./dist && rimraf ./.parcel-cache",
     "start:sass": "npm-run-all --parallel devserver watch:sass",
