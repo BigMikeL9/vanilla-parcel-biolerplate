@@ -7,10 +7,11 @@ const ButtonS = styled.button`
   font: inherit;
   border: 1px solid #4f005f;
   background: #4f005f;
-  color: red;
+  color: #fff;
+  font-weight: 700;
   padding: 0.75rem 3.5rem;
   cursor: pointer;
-  font-size: 1.15rem;
+  font-size: 2.5rem;
   border-radius: 30px;
 
   &:hover,
@@ -23,26 +24,29 @@ const ButtonS = styled.button`
 const Button = (props) => {
   console.log(props);
 
+  const onClickHandler = (event) => {
+    console.log(event.target);
+  };
+
   return (
     <CardS>
       <ButtonS
         className={props.className}
         type={props.type || "button"}
-        onClick={props.onClick}
+        onClick={onClickHandler}
       >
-        {h1}
+        {props.children}
       </ButtonS>
     </CardS>
   );
 };
-
-const h1 = document.querySelector("h1")?.innerHTML;
 
 // ----------------------------------
 // Add when using React components in HTML 👇
 
 // --------
 // -- When we have just ONE of the same element in HTML
+
 // const container = document.getElementById("button");
 // if (!container) return;
 // const root = ReactDOM.createRoot(container);
@@ -62,9 +66,9 @@ roots.forEach((root, index) =>
   root.render(<Button {...containers[index].dataset} />)
 );
 
-console.log(roots);
 // ----------------------------------
 
+// 🟢 Example
 {
   /* <div
       id="react__button"
