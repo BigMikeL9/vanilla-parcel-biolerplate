@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "npm run clean && parcel src/index.html -p 1234 --open",
-    "build": "rimraf ./dist && parcel build --no-optimize src/*.html --public-url ./",
+    "build": "rimraf ./dist && parcel build src/*.html --public-url ./",
     "clean": "rimraf ./dist && rimraf ./.parcel-cache",
     "start:sass": "npm-run-all --parallel devserver watch:sass",
     "watch:sass": "sass src/sass/main.scss src/css/style.css -w",
