@@ -23,25 +23,32 @@
     font-weight: 400;
 
     @include responsive(mobile) {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
+      display: unset;
+      text-align: center;
+      padding: 2rem 4rem;
+
+      background-color: var(--color-primary);
+      box-shadow: 0 2rem 2rem rgb(0 0 0 / 20%);
+
+      width: max-content;
+      min-width: 100%;
+      z-index: 40;
+      max-height: 0;
+      visibility: hidden;
+      transition: all 0.5s;
       position: absolute;
       top: 100%;
-      left: 0;
-      background-color: var(--color-primary);
-      padding: 2rem 4rem;
-      z-index: 40;
-      box-shadow: 0 2rem 2rem rgb(0 0 0 / 20%);
+      right: 0;
+      overflow: hidden;
 
       max-height: 0;
       overflow: hidden;
       visibility: hidden;
-      transition: all 0.5s;
+      transition: all 0.5s ease-out;
+      backface-visibility: hidden;
 
       &.active {
-        max-height: 50vh;
+        max-height: 70vh;
         visibility: visible;
       }
     }
@@ -52,7 +59,7 @@
     padding: 2rem 0;
 
     @include responsive(mobile) {
-      padding: unset;
+      padding: 1rem;
     }
   }
 

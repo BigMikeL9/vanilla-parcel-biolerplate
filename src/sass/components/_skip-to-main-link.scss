@@ -1,0 +1,22 @@
+.skip-to-main-content {
+  background-color: var(--color-secondary);
+  color: #fff;
+  transition: all 0.3s;
+  font-size: 26px;
+  padding: 15px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  translate: 0 -100%;
+  transition: all 0.3s;
+  z-index: 99;
+
+  &:focus {
+    color: #fff;
+    outline: none;
+    text-decoration: underline;
+    translate: 0 0;
+  }
+}

@@ -96,14 +96,15 @@ a {
 a:not([class~="nav__link"]) {
   &:link,
   &:visited {
-    color: var(--color-secondary);
+    color: var(--color-link);
     text-decoration: underline;
   }
 
   &:hover,
   &:focus {
-    color: var(--color-secondary_Hover);
     outline: none;
+    color: var(--color-link-hover);
+    text-decoration: underline;
   }
 }
 

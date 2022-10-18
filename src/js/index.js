@@ -1,5 +1,3 @@
-"use strict";
-
-import Button from "./components/Button";
-import dropdowns_Toggle from "./components/dropdownsToggle";
-import navBar from "./components/navBar";
+import Button from "./components/Button/Button";
+import dropdowns_Toggle from "./components/dropdown/dropdownsToggle";
+import nav from "./components/nav/nav";

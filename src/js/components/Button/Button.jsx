@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import styled from "styled-components";
-import { CardS } from "./Card";
+import { CardS } from "../Card/Card";
 
 const ButtonS = styled.button`
   font: inherit;

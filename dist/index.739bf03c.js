@@ -2894,19 +2894,18 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"ebWYT":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-var _button = require("./components/Button");
+var _button = require("./components/Button/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _dropdownsToggle = require("./components/dropdownsToggle");
+var _dropdownsToggle = require("./components/dropdown/dropdownsToggle");
 var _dropdownsToggleDefault = parcelHelpers.interopDefault(_dropdownsToggle);
-var _navBar = require("./components/navBar");
-var _navBarDefault = parcelHelpers.interopDefault(_navBar);
-"use strict";
+var _nav = require("./components/nav/nav");
+var _navDefault = parcelHelpers.interopDefault(_nav);
 
-},{"./components/Button":"8AdDV","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./components/dropdownsToggle":"4mbf4","./components/navBar":"3WW6e"}],"8AdDV":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$c282 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"./components/Button/Button":"gh0FG","./components/dropdown/dropdownsToggle":"fQOuj","./components/nav/nav":"aha9n","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gh0FG":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$822b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$c282.prelude(module);
+$parcel$ReactRefreshHelpers$822b.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -2917,7 +2916,7 @@ var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
 var _styledComponents = require("styled-components");
 var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
-var _card = require("./Card");
+var _card = require("../Card/Card");
 const ButtonS = (0, _styledComponentsDefault.default).button`
   font: inherit;
   border: 1px solid #4f005f;
@@ -2948,12 +2947,12 @@ const Button = (props)=>{
             onClick: onClickHandler,
             children: props.children
         }, void 0, false, {
-            fileName: "src/js/components/Button.jsx",
+            fileName: "src/js/components/Button/Button.jsx",
             lineNumber: 33,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
-        fileName: "src/js/components/Button.jsx",
+        fileName: "src/js/components/Button/Button.jsx",
         lineNumber: 32,
         columnNumber: 5
     }, undefined);
@@ -2978,7 +2977,7 @@ const roots = [
 roots.forEach((root, index)=>root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Button, {
         ...containers[index].dataset
     }, void 0, false, {
-        fileName: "src/js/components/Button.jsx",
+        fileName: "src/js/components/Button/Button.jsx",
         lineNumber: 66,
         columnNumber: 15
     }, undefined)));
@@ -2986,12 +2985,12 @@ var _c, _c1;
 $RefreshReg$(_c, "ButtonS");
 $RefreshReg$(_c1, "Button");
 
-  $parcel$ReactRefreshHelpers$c282.postlude(module);
+  $parcel$ReactRefreshHelpers$822b.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","styled-components":"1U3k6","./Card":"jBoaM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","styled-components":"1U3k6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../Card/Card":"2HiL3"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("./cjs/react-jsx-dev-runtime.development.js");
 
@@ -27202,7 +27201,7 @@ function _(e) {
 function N(e) {
     return e && "string" == typeof e.styledComponentId;
 }
-var A = ("undefined" != typeof process && undefined, "data-styled"), C = "5.3.5", I = "undefined" != typeof window && "HTMLElement" in window, P = Boolean("boolean" == typeof SC_DISABLE_SPEEDY ? SC_DISABLE_SPEEDY : (typeof process, typeof process, true)), O = {}, R = {
+var A = ("undefined" != typeof process && undefined, "data-styled"), C = "5.3.6", I = "undefined" != typeof window && "HTMLElement" in window, P = Boolean("boolean" == typeof SC_DISABLE_SPEEDY ? SC_DISABLE_SPEEDY : (typeof process, typeof process, true)), O = {}, R = {
     1: "Cannot create styled-component for component: %s.\n\n",
     2: "Can't collect styles once you've consumed a `ServerStyleSheet`'s styles! `ServerStyleSheet` is a one off instance for each server-side render cycle.\n\n- Are you trying to reuse it across renders?\n- Are you accidentally calling collectStyles twice?\n\n",
     3: "Streaming SSR is only supported in a Node.js environment; Please do not try to call this method in the browser.\n\n",
@@ -27269,7 +27268,7 @@ var T = function() {
     return k.get(e);
 }, M = function(e, t) {
     t >= V && (V = t + 1), x.set(e, t), k.set(t, e);
-}, G = "style[" + A + '][data-styled-version="5.3.5"]', L = new RegExp("^" + A + '\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)'), F = function(e, t, n) {
+}, G = "style[" + A + '][data-styled-version="5.3.6"]', L = new RegExp("^" + A + '\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)'), F = function(e, t, n) {
     for(var r, o = n.split(","), s = 0, i = o.length; s < i; s++)(r = o[s]) && e.registerName(t, r);
 }, Y = function(e, t) {
     for(var n = (t.textContent || "").split("/*!sc*/\n"), r = [], o = 0, s = n.length; o < s; o++){
@@ -27283,7 +27282,7 @@ var T = function() {
         }
     }
 }, q = function() {
-    return "undefined" != typeof window && void 0 !== window.__webpack_nonce__ ? window.__webpack_nonce__ : null;
+    return "undefined" != typeof __webpack_nonce__ ? __webpack_nonce__ : null;
 }, H = function(e) {
     var t = document.head, n = e || t, r = document.createElement("style"), o = function(e) {
         for(var t = e.childNodes, n = t.length; n >= 0; n--){
@@ -27291,7 +27290,7 @@ var T = function() {
             if (r && 1 === r.nodeType && r.hasAttribute(A)) return r;
         }
     }(n), s = void 0 !== o ? o.nextSibling : null;
-    r.setAttribute(A, "active"), r.setAttribute("data-styled-version", "5.3.5");
+    r.setAttribute(A, "active"), r.setAttribute("data-styled-version", "5.3.6");
     var i = q();
     return i && r.setAttribute("nonce", i), n.insertBefore(r, s), r;
 }, $ = function() {
@@ -27425,7 +27424,7 @@ function re(e) {
     }
     return !0;
 }
-var oe = ne("5.3.5"), se = function() {
+var oe = ne("5.3.6"), se = function() {
     function e(e, t, n) {
         this.rules = e, this.staticRulesId = "", this.isStatic = false, this.componentId = t, this.baseHash = te(oe, t), this.baseStyle = n, Z.registerId(t);
     }
@@ -27685,7 +27684,7 @@ function qe(e, t, n) {
     var o = N(e), i = !ke(e), a = t.attrs, c = void 0 === a ? w : a, d = t.componentId, h = void 0 === d ? function(e, t) {
         var n = "string" != typeof e ? "sc" : Te(e);
         Ye[n] = (Ye[n] || 0) + 1;
-        var r = n + "-" + xe("5.3.5" + n + Ye[n]);
+        var r = n + "-" + xe("5.3.6" + n + Ye[n]);
         return t ? t + "-" + r : r;
     }(t.displayName, t.parentComponentId) : d, p = t.displayName, f = void 0 === p ? function(e) {
         return ke(e) ? "styled." + e : "Styled(" + _(e) + ")";
@@ -27977,14 +27976,14 @@ var Je = function() {
             return "<style " + [
                 n && 'nonce="' + n + '"',
                 A + '="true"',
-                'data-styled-version="5.3.5"'
+                'data-styled-version="5.3.6"'
             ].filter(Boolean).join(" ") + ">" + t + "</style>";
         }, this.getStyleTags = function() {
             return e.sealed ? j(2) : e._emitSheetCSS();
         }, this.getStyleElement = function() {
             var t;
             if (e.sealed) return j(2);
-            var n = ((t = {})[A] = "", t["data-styled-version"] = "5.3.5", t.dangerouslySetInnerHTML = {
+            var n = ((t = {})[A] = "", t["data-styled-version"] = "5.3.6", t.dangerouslySetInnerHTML = {
                 __html: e.instance.toString()
             }, t), o = q();
             return o && (n.nonce = o), [
@@ -28024,7 +28023,7 @@ var Je = function() {
 "undefined" != typeof navigator && "ReactNative" === navigator.product && console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native"), "undefined" != typeof window && (window["__styled-components-init__"] = window["__styled-components-init__"] || 0, 1 === window["__styled-components-init__"] && console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."), window["__styled-components-init__"] += 1);
 exports.default = He;
 
-},{"react-is":"7EuwB","react":"21dqq","shallowequal":"fjwkp","@emotion/stylis":"fGS9o","@emotion/unitless":"pVndT","@emotion/is-prop-valid":"6uRZg","hoist-non-react-statics":"1GfsB","process":"d5jf4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7EuwB":[function(require,module,exports) {
+},{"react-is":"7EuwB","react":"21dqq","shallowequal":"fjwkp","@emotion/stylis":"fGS9o","@emotion/unitless":"pVndT","@emotion/is-prop-valid":"9JzNk","hoist-non-react-statics":"1GfsB","process":"d5jf4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7EuwB":[function(require,module,exports) {
 "use strict";
 module.exports = require("./cjs/react-is.development.js");
 
@@ -28767,7 +28766,7 @@ var unitlessKeys = {
 };
 exports.default = unitlessKeys;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6uRZg":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9JzNk":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _memoize = require("@emotion/memoize");
@@ -28778,7 +28777,7 @@ var isPropValid = /* #__PURE__ */ (0, _memoizeDefault.default)(function(prop) {
 });
 exports.default = isPropValid;
 
-},{"@emotion/memoize":"WW7h8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"WW7h8":[function(require,module,exports) {
+},{"@emotion/memoize":"2vzJd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2vzJd":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 function memoize(fn) {
@@ -29034,38 +29033,7 @@ module.exports = require("./cjs/react-is.development.js");
     exports.typeOf = typeOf;
 })();
 
-},{}],"jBoaM":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$8f31 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$8f31.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "CardS", ()=>CardS);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _styledComponents = require("styled-components");
-var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
-const CardS = (0, _styledComponentsDefault.default).div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 4rem;
-  border-radius: 2rem;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
-  max-width: fit-content;
-  margin: 2rem auto;
-  background-color: teal;
-`;
-
-  $parcel$ReactRefreshHelpers$8f31.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"21dqq","styled-components":"1U3k6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"km3Ru":[function(require,module,exports) {
+},{}],"km3Ru":[function(require,module,exports) {
 "use strict";
 var Refresh = require("react-refresh/runtime");
 function debounce(func, delay) {
@@ -29185,9 +29153,41 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"react-refresh/runtime":"786KC"}],"4mbf4":[function(require,module,exports) {
+},{"react-refresh/runtime":"786KC"}],"2HiL3":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$e990 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$e990.prelude(module);
+
+try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "CardS", ()=>CardS);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+const CardS = (0, _styledComponentsDefault.default).div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  max-width: fit-content;
+  margin: 2rem auto;
+  background-color: teal;
+`;
+
+  $parcel$ReactRefreshHelpers$e990.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","styled-components":"1U3k6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fQOuj":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+"use strict";
 const dropdowns_Toggle = ()=>{
     const dropdownContainers = document.querySelectorAll(".portraits__list-sort .dropdown");
     // -- guard clause
@@ -29210,10 +29210,11 @@ const dropdowns_Toggle = ()=>{
 dropdowns_Toggle();
 exports.default = dropdowns_Toggle;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3WW6e":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aha9n":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-const navBar = ()=>{
+"use strict";
+const nav = ()=>{
     const navMobileBtn = document.querySelector(".nav__mobile-icon");
     const navMobileBtn_Text = document.querySelector(".nav__mobile-icon--text");
     const navList = document.querySelector(".nav__list");
@@ -29228,8 +29229,8 @@ const navBar = ()=>{
     };
     navMobileBtn.addEventListener("click", navMobile_Toggle);
 };
-navBar();
-exports.default = navBar; // ------------------------------------------------------------------
+nav();
+exports.default = nav; // ------------------------------------------------------------------
  // Hide Dropdown when click outside
  // document.addEventListener("click", function (event) {
  //   if (

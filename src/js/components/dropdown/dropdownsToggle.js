@@ -1,3 +1,5 @@
+"use strict";
+
 const dropdowns_Toggle = () => {
   const dropdownContainers = document.querySelectorAll(
     ".portraits__list-sort .dropdown"

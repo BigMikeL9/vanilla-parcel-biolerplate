@@ -1,4 +1,6 @@
-const navBar = () => {
+"use strict";
+
+const nav = () => {
   const navMobileBtn = document.querySelector(".nav__mobile-icon");
   const navMobileBtn_Text = document.querySelector(".nav__mobile-icon--text");
 
@@ -23,9 +25,9 @@ const navBar = () => {
   navMobileBtn.addEventListener("click", navMobile_Toggle);
 };
 
-navBar();
+nav();
 
-export default navBar;
+export default nav;
 
 // ------------------------------------------------------------------
 // Hide Dropdown when click outside

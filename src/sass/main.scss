@@ -2,11 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'npm:normalize.css';
+@import "npm:normalize.css";
 
 @import "abstracts/variables";
 @import "abstracts/mixins";
-
 
 @import "base/animations";
 @import "base/base";
@@ -14,7 +13,7 @@
 @import "base/utilities";
 
 @import "components/btn";
-
+@import "components/skip-to-main-link";
 
 @import "layout/header";
 @import "layout/nav";
