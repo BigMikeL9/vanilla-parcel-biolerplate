@@ -63,7 +63,7 @@
 
     &:hover,
     &:focus,
-    &.active {
+    &[aria-current="page"] {
       color: var(--color-secondary);
     }
   }

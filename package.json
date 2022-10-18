@@ -20,20 +20,20 @@
   "author": "Mikel",
   "license": "ISC",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.6.2",
-    "autoprefixer": "^10.4.2",
+    "@parcel/transformer-sass": "^2.7.0",
+    "autoprefixer": "^10.4.12",
     "babel-cli": "^6.26.0",
     "concat": "^1.0.3",
     "npm-run-all": "^4.1.5",
-    "parcel": "^2.6.2",
-    "postcss": "^8.4.14",
-    "postcss-cli": "^9.1.0",
+    "parcel": "^2.7.0",
+    "postcss": "^8.4.18",
+    "postcss-cli": "^10.0.0",
     "process": "^0.11.10",
-    "sass": "^1.43.2",
-    "tailwindcss": "^3.1.6"
+    "sass": "^1.55.0",
+    "tailwindcss": "^3.1.8"
   },
   "dependencies": {
-    "babel-preset-react-app": "^3.1.2",
+    "babel-preset-react-app": "^10.0.1",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
