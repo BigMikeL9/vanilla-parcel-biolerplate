@@ -1,0 +1,24 @@
+.header {
+  &__logo {
+    a {
+      &:link,
+      &:visited {
+        color: #ff4d5a;
+        transition: all 0.3s;
+      }
+
+      &:hover,
+      &:focus {
+        color: #aa323a;
+      }
+    }
+
+    svg {
+      width: 54px;
+      height: 54px;
+
+      use {
+      }
+    }
+  }
+}

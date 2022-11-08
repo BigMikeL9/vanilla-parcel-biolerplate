@@ -61,7 +61,7 @@ body {
 }
 
 ::selection {
-  background-color: #a73f90;
+  background-color: #ff4d5a;
   color: #fff;
 }
 
@@ -82,29 +82,15 @@ section {
 a {
   &:link,
   &:visited {
-    color: inherit;
+    color: var(--color-link, inherit);
+    // color: inherit;
     text-decoration: inherit;
   }
 
   &:hover,
   &:focus {
     outline: none;
-  }
-}
-
-// all anchor tags except navlinks
-a:not([class~="nav__link"]) {
-  &:link,
-  &:visited {
-    color: var(--color-link);
-    text-decoration: underline;
-  }
-
-  &:hover,
-  &:focus {
-    outline: none;
-    color: var(--color-link-hover);
-    text-decoration: underline;
+    color: var(--color-link-hover, inherit);
   }
 }
 

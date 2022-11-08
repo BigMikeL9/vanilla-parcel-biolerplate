@@ -30,6 +30,4 @@ const dropdowns_Toggle = () => {
   });
 };
 
-dropdowns_Toggle();
-
 export default dropdowns_Toggle;

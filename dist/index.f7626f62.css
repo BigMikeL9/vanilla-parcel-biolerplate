@@ -457,14 +457,16 @@ img, video {
   text-decoration-line: underline;
 }
 
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 :root {
   --color-primary: #7ed56f;
   --color-secondary: #ffb900;
   --color-tertiary: #2998ff;
   --color-link: #288;
   --color-link-hover: #1f5858;
-  --color-white: #fff;
-  --color-black: #000;
   --font-primary: "Raleway", sans-serif;
   --font-secondary: "Belgrano", sans-serif;
 }
@@ -594,7 +596,7 @@ body {
 
 ::selection {
   color: #fff;
-  background-color: #a73f90;
+  background-color: #ff4d5a;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -602,23 +604,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 a:link, a:visited {
-  color: inherit;
+  color: var(--color-link, inherit);
   text-decoration: inherit;
 }
 
 a:hover, a:focus {
+  color: var(--color-link-hover, inherit);
   outline: none;
-}
-
-a:not([class~="nav__link"]):link, a:not([class~="nav__link"]):visited {
-  color: var(--color-link);
-  text-decoration: underline;
-}
-
-a:not([class~="nav__link"]):hover, a:not([class~="nav__link"]):focus {
-  color: var(--color-link-hover);
-  outline: none;
-  text-decoration: underline;
 }
 
 ul, ol {
@@ -737,17 +729,25 @@ table {
   translate: 0;
 }
 
+.header__logo a:link, .header__logo a:visited {
+  color: #ff4d5a;
+  transition: all .3s;
+}
+
+.header__logo a:hover, .header__logo a:focus {
+  color: #aa323a;
+}
+
+.header__logo svg {
+  width: 54px;
+  height: 54px;
+}
+
 .nav {
   z-index: 999;
   background-color: var(--color-primary);
   font-size: max(12px, 1.4rem);
   position: relative;
-}
-
-@media only screen and (max-width: 37.5em) {
-  .nav {
-    min-height: var(--nav-height-600);
-  }
 }
 
 .nav__list {

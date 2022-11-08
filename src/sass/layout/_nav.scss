@@ -5,7 +5,6 @@
   background-color: var(--color-primary);
 
   @include responsive(mobile) {
-    min-height: var(--nav-height-600);
   }
 
   &__list {

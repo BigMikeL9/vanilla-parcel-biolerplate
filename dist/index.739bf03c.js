@@ -2900,8 +2900,16 @@ var _dropdownsToggle = require("./components/dropdown/dropdownsToggle");
 var _dropdownsToggleDefault = parcelHelpers.interopDefault(_dropdownsToggle);
 var _nav = require("./components/nav/nav");
 var _navDefault = parcelHelpers.interopDefault(_nav);
+var _lazyLoad = require("./utility/lazyLoad/lazyLoad");
+var _lazyLoadDefault = parcelHelpers.interopDefault(_lazyLoad);
+const init = ()=>{
+    (0, _dropdownsToggleDefault.default)();
+    (0, _navDefault.default)();
+    (0, _lazyLoadDefault.default)();
+};
+init();
 
-},{"./components/Button/Button":"gh0FG","./components/dropdown/dropdownsToggle":"fQOuj","./components/nav/nav":"aha9n","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gh0FG":[function(require,module,exports) {
+},{"./components/Button/Button":"gh0FG","./components/dropdown/dropdownsToggle":"fQOuj","./components/nav/nav":"aha9n","./utility/lazyLoad/lazyLoad":"33uri","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gh0FG":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$822b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -29207,7 +29215,6 @@ const dropdowns_Toggle = ()=>{
         });
     });
 };
-dropdowns_Toggle();
 exports.default = dropdowns_Toggle;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aha9n":[function(require,module,exports) {
@@ -29215,31 +29222,63 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 "use strict";
 const nav = ()=>{
-    const navMobileBtn = document.querySelector(".nav__mobile-icon");
-    const navMobileBtn_Text = document.querySelector(".nav__mobile-icon--text");
+    const nav = document.querySelector(".nav");
+    const navBtn = document.querySelector(".nav__button");
     const navList = document.querySelector(".nav__list");
+    const navLinks = document.querySelectorAll(".nav__list a");
+    // const navBg = document.querySelector(".nav__background");
+    // ---------
     // Toggle Mobile Drop-down
-    const navMobile_Toggle = ()=>{
-        navMobileBtn.classList.toggle("active");
+    const nav_Toggle = ()=>{
+        navBtn.classList.toggle("active");
         navList.classList.toggle("active");
+        // navBg.classList.toggle("active");
         // TOGGLE 'aria-expanded'
-        navMobileBtn.ariaExpanded === "false" ? navMobileBtn.ariaExpanded = "true" : navMobileBtn.ariaExpanded = "false";
-        // Toggle Hamburger Menu text
-        navMobileBtn_Text.innerHTML === "Menu" ? navMobileBtn_Text.textContent = "Close" : navMobileBtn_Text.textContent = "Menu";
+        navBtn.ariaExpanded === "false" ? navBtn.ariaExpanded = "true" : navBtn.ariaExpanded = "false";
     };
-    navMobileBtn.addEventListener("click", navMobile_Toggle);
+    // ---------
+    // close dropdown when link is clicked
+    navLinks.forEach((link)=>{
+        link.addEventListener("click", function() {
+            nav_Toggle();
+        });
+    });
+    // ---------
+    navBtn.addEventListener("click", nav_Toggle);
+    // ------------------------------------------------------------------
+    // -- close dropdown when clicked outside
+    document.addEventListener("click", function(event) {
+        if (!event.target.closest("nav") && navList.classList.contains("active")) navList.classList.remove("active");
+    });
 };
-nav();
-exports.default = nav; // ------------------------------------------------------------------
- // Hide Dropdown when click outside
- // document.addEventListener("click", function (event) {
- //   if (
- //     !event.target.closest(".nav__responsive") &&
- //     navResponsiveBtn.classList.contains("active")
- //   ) {
- //     navResponsive_Toggle();
- //   }
- // });
+exports.default = nav;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"33uri":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+const lazyLoad = ()=>{
+    const featuredImages = document.querySelectorAll("img[data-src]");
+    const imagesObsCallBack = function(entries, observer) {
+        entries.forEach((entry)=>{
+            if (!entry.isIntersecting) return;
+            // Replace 'src' with 'data-src'
+            entry.target.setAttribute("src", entry.target.dataset.src);
+            // [ALWAYS USE 'load' event WHEN IMPLEMENTING 'LAZY LOADING IMAGES' strategy]
+            entry.target.addEventListener("load", function() {
+                entry.target.classList.remove("lazy-img");
+            });
+            // stops observing after replacing and removing css filter class
+            observer.unobserve(entry.target);
+        });
+    };
+    const imagesObsOptions = {
+        root: null,
+        threshold: 0.7
+    };
+    const imagesObserver = new IntersectionObserver(imagesObsCallBack, imagesObsOptions);
+    featuredImages.forEach((image)=>imagesObserver.observe(image));
+};
+exports.default = lazyLoad;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["1xC6H","cVgJb","ebWYT"], "ebWYT", "parcelRequire4c92")
 
